@@ -1,0 +1,21 @@
+<mvc:View controllerName="dk.sorenviggo.test.PDF_View_Test002.controller.FileList" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<List mode="None" items="{ViewModel>/files}" itemPress="onItemPress">
+							<items>
+								<ObjectListItem 
+	                            	title="{ViewModel>title}" 
+	                            	type="Active" selected="false"/>
+							</items>
+						</List>
+<!--						<Link text="PDF.js" href="../webapp/PDFjs/web/viewer.html?file=../../knowledge/sample.pdf"/>-->
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,13 @@
+<mvc:View 
+	controllerName="dk.sorenviggo.test.PDF_View_Test002.controller.ViewFile"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<VBox height="100%">
+		<Title text="File path: {ViewModel>/file}"/>
+		<PDFViewer source="{ViewModel>/file}" height="100%">
+			<layoutData>
+				<FlexItemData growFactor="1" />
+			</layoutData>
+		</PDFViewer>
+	</VBox>
+</mvc:View>
