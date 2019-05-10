@@ -42,14 +42,26 @@ sap.ui.define([
 						},
 						{
 							fileId: "3",
-							title: "Sample - via PDF.js",
+							title: "Sample - via PDF.js (full)",
 							type: "PDFJS",
 							file: "sample.pdf"
 						},
 						{
 							fileId: "4",
-							title: "ABAP - via PDF.js",
+							title: "ABAP - via PDF.js (full)",
 							type: "PDFJS",
+							file: "abap.pdf"
+						},
+						{
+							fileId: "7",
+							title: "Sample - via PDF.js (embedded)",
+							type: "PDFJS_EMBED",
+							file: "sample.pdf"
+						},
+						{
+							fileId: "8",
+							title: "ABAP - via PDF.js (embedded)",
+							type: "PDFJS_EMBED",
 							file: "abap.pdf"
 						}
 					]
@@ -63,13 +75,15 @@ sap.ui.define([
 			var fileId = obj.fileId;
 			if (obj.type === "UI5_EMBEDDED"){
 				this.navTo("viewFile", { fileId : fileId });
-			}else if (obj.type === "PDFJS"){
-				location.href = this.getModulePath() + "/PDFjs/web/viewer.html?file=../../knowledge/" + obj.file;
 			}else if (obj.type === "UI5_POPUP"){
 				var filePath = this.getModulePath() + "/knowledge/" + obj.file;
 				this._pdfViewer.setSource(filePath);
 				this._pdfViewer.setTitle(obj.file);
 				this._pdfViewer.open();	
+			}else if (obj.type === "PDFJS"){
+				location.href = this.getModulePath() + "/PDFjs/web/viewer.html?file=../../knowledge/" + obj.file;
+			}else if (obj.type === "PDFJS_EMBED"){
+				this.navTo("viewfilepdfjs", { fileId : fileId });
 			}
 		}
 

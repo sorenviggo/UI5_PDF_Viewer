@@ -23,8 +23,6 @@ sap.ui.define([
 				}
 				var file = "";
 				file = this.getModulePath() + "/knowledge/" + fileName;
-//				file = sap.ui.require.toUrl("sap/m/sample/PDFViewerEmbedded") + "knowledge/Elementer.pdf";
-//				file = "https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/sample/PDFViewerEmbedded/sample.pdf";
 				var oModel = new JSONModel( { file : file } );
 				this.getView().setModel(oModel, "ViewModel");
 			}
