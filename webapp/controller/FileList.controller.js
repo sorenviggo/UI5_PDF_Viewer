@@ -61,7 +61,7 @@ sap.ui.define([
 		onItemPress: function(oEvent){
 			var obj = oEvent.getParameter("listItem").getBindingContext("ViewModel").getObject();
 			var fileId = obj.fileId;
-			if (fileId === "1" || fileId === "2"){
+			if (obj.type === "UI5_EMBEDDED"){
 				this.navTo("viewFile", { fileId : fileId });
 			}else if (obj.type === "PDFJS"){
 				location.href = this.getModulePath() + "/PDFjs/web/viewer.html?file=../../knowledge/" + obj.file;
